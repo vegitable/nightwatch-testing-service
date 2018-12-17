@@ -1,13 +1,8 @@
 module.exports = {
-  'Demo test Google' : function (browser) {
+  'Homepage loads succesfully' : function (browser) {
     browser
-      .url('http://www.google.com')
-      .waitForElementVisible('body')
-      .setValue('input[type=text]', 'nightwatch')
-      .waitForElementVisible('input[name=btnK]')
-      .click('input[name=btnK]')
-      .pause(1000)
-      .assert.containsText('#main', 'Night Watch')
+      .url('https://web-ui-service.herokuapp.com/')
+      .waitForElementVisible('.logoVegitable')
       .end();
   }
 };
