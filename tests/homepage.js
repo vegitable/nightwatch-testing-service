@@ -1,5 +1,5 @@
 module.exports = {
-  'Homepage loads succesfully' : function (browser) {
+  'Homepage should load succesfully...' : function (browser) {
     browser
       .url('https://web-ui-service.herokuapp.com/')
       .waitForElementVisible('.logoVegitable')
