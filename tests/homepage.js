@@ -1,8 +1,9 @@
 module.exports = {
-  'Homepage should load succesfully...' : function (browser) {
+  'Homepage should load succesfully...' : (browser) => {
+    console.log(process.env.NIGHTWATCH_URL);
     browser
-      .url('https://web-ui-service.herokuapp.com/')
-      .waitForElementVisible('.logoVegitable')
+      .url(process.env.NIGHTWATCH_URL)
+      .waitForElementVisible('.logo')
       .end();
   }
 };
