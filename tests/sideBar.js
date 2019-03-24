@@ -18,5 +18,5 @@ module.exports = {
       .click("//*[@id='root']/div/div[1]/div[2]/div/div[2]/div[1]/nav/a[1]")
       .assert.urlContains(process.env.NIGHTWATCH_URL)
       .end();
-  },
+  }
 };
