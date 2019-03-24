@@ -29,4 +29,16 @@ module.exports = {
       .assert.containsText('.alertText', 'NO RESTAURANTS FOR YOU!')
       .end();
   },
+
+  'Should route to /restaurants if results are found...' : (browser) => {
+    browser
+      .url(process.env.NIGHTWATCH_URL)
+      .waitForElementVisible('.logo')
+      .waitForElementVisible('.searchBarTextInput')
+      .setValue('.searchBarTextInput', 'E147dx')
+      .waitForElementVisible('.searchBarSubmitButton')
+      .click('.searchBarSubmitButton')
+      .assert.urlContains(process.env.NIGHTWATCH_URL + '/restaurants')
+      .end();
+  },
 };
