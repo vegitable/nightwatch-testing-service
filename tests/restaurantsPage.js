@@ -11,4 +11,11 @@ module.exports = {
     .waitForElementVisible('.restaurantTile')
     .end();
   },
+  'should be routed to home page if there is not restaurant data' : (browser) => {
+    browser
+    .url(process.env.NIGHTWATCH_URL + '/restaurants')
+    .waitForElementVisible('.logo')
+    .assert.urlEquals(process.env.NIGHTWATCH_URL + '/')
+    .end();
+  },
 };
